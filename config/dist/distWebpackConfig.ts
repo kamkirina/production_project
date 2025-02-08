@@ -18,7 +18,7 @@ return {
     module: {
         rules: distLoaders(options),
     },
-    resolve: distResolvers(),
+    resolve: distResolvers(options),
     devtool: isDev ? "inline-source-map" : undefined,
     devServer: isDev? distDevServer(options) : undefined,
 }
