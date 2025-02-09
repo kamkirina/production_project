@@ -1,21 +1,21 @@
-import htmlWebpackPlugin from "html-webpack-plugin";
-import path from "path";
-import webpack from "webpack";
-import {BuildOptions} from "./types/config";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import webpack from 'webpack';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import { type BuildOptions } from './types/config';
 
-export function distPlugins({paths, isDev}: BuildOptions): webpack.WebpackPluginInstance []{
+export function distPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPluginInstance [] {
     return [
-        new htmlWebpackPlugin({
+        new HtmlWebpackPlugin({
             template: paths.html,
         }),
         new webpack.ProgressPlugin(),
         new MiniCssExtractPlugin({
-            filename: "css/[name].[contenthash:8].css",
-            chunkFilename: "css/[name].[contenthash:8].css",
+            filename: 'css/[name].[contenthash:8].css',
+            chunkFilename: 'css/[name].[contenthash:8].css',
         }),
         new webpack.DefinePlugin({
-            __IS_DEV__ : JSON.stringify(isDev),
-        })
-    ]
+            __IS_DEV__: JSON.stringify(isDev),
+        }),
+        new webpack.HotModuleReplacementPlugin(),
+    ];
 }
