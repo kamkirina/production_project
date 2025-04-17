@@ -15,9 +15,9 @@ export default {
 
 const Template: ComponentStory<typeof AboutPage> = () => <AboutPage />;
 
-export const Ligth = Template.bind({});
+export const Light = Template.bind({});
 
-Ligth.args = {};
+Light.args = {};
 
 export const Dark = Template.bind({});
 Dark.args = {};
