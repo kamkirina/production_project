@@ -10,5 +10,7 @@
   "Перезагрузить": "Reload",
   "переключить": "toggle",
   "Короткий язык": "En",
-  "Войти": "Login"
+  "Войти": "Login",
+  "decrement": "decrement",
+  "increment": "increment"
 }
