@@ -54,7 +54,7 @@ export const Navbar = ({ className }: NavbarProps) => {
                 >
                     {t('Войти')}
                 </Button>
-                <LoginModal isOpen={isAuth} onClose={onCloseModal} />
+                {isAuth && <LoginModal isOpen={isAuth} onClose={onCloseModal} />}
                 <AppLink
                     to="/"
                     className={cls.mainLink}
